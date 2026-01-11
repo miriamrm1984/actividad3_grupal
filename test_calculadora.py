@@ -24,6 +24,10 @@ class TestCalculadora(unittest.TestCase):
     def test_sumar_negativos(self):
         """Comprueba que la suma de dos números negativos es correcta."""
         self.assertEqual(self.calc.sumar(-2, -3), -5)
+    
+    def test_sumar_negativopositivo(self):
+        """Comprueba que la suma entre un número negativo y otro positivo es correcta."""
+        self.assertEqual(self.calc.sumar(-5, 9), 4)
 
     def test_sumar_con_cero(self):
         """Comprueba que sumar cero no altera el valor."""
@@ -39,6 +43,10 @@ class TestCalculadora(unittest.TestCase):
         """Comprueba la resta entre dos números negativos."""
         self.assertEqual(self.calc.restar(-5, -3), -2)
 
+    def test_restar_negativopositivo(self):
+        """Comprueba que la resta entre un número negativo y otro positivo es correcta."""
+        self.assertEqual(self.calc.restar(-8, 3), -11)
+
     def test_restar_con_cero(self):
         """Comprueba que restar cero no altera el valor."""
         self.assertEqual(self.calc.restar(5, 0), 5)
@@ -51,7 +59,11 @@ class TestCalculadora(unittest.TestCase):
 
     def test_multiplicar_negativos(self):
         """Comprueba la multiplicación con un número negativo."""
-        self.assertEqual(self.calc.multiplicar(-2, 3), -6)
+        self.assertEqual(self.calc.multiplicar(-2, -10), 20)
+    
+    def test_multiplicar_negativopositivo(self):
+        """Comprueba que la multiplicación entre un número negativo y otro positivo es correcta."""
+        self.assertEqual(self.calc.multiplicar(-8, 3), -24)
 
     def test_multiplicar_con_cero(self):
         """Comprueba que cualquier número multiplicado por cero da cero."""
@@ -64,8 +76,12 @@ class TestCalculadora(unittest.TestCase):
         self.assertEqual(self.calc.dividir(6, 3), 2)
 
     def test_dividir_negativos(self):
-        """Comprueba la división con resultado negativo."""
-        self.assertEqual(self.calc.dividir(-6, 3), -2)
+        """Comprueba la división entre dos números negativos."""
+        self.assertEqual(self.calc.dividir(-6, -3), 2)
+    
+    def test_dividir_negativopositivo(self):
+        """Comprueba que la división entre un número negativo y otro positivo es correcta."""
+        self.assertEqual(self.calc.dividir(-10, 2), -5)
 
     def test_dividir_decimal(self):
         """Comprueba que la división puede producir decimales."""
